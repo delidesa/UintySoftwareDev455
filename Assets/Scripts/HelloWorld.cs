@@ -9,7 +9,7 @@ public class HelloWorld : MonoBehaviour
 	{
 	//CSE 455 Software Engineering
 	Debug.Log("Hello World!");
-
+	Debug.Log("Line added by Theodore Baca"); 
 	}
 
 }
