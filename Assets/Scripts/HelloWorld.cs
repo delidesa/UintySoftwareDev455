@@ -8,11 +8,11 @@ public class HelloWorld : MonoBehaviour
 	void HelloHello()
 	{
 	//CSE 455 Software Engineering
-	Debug.Log("Hello World!");
+	Debug.Log("Hello World!");//Steven Ivers
 	Debug.Log("Line added by Theodore Baca"); 
-	//Adde line
+	//Added line
 	Debug.Log("Diego Gamboa Added a line too!");
     //Added a  line
-        Debug.Log("Ruben Rodriguez Checking in ");
+    Debug.Log("Ruben Rodriguez Checking in ");
 
     }
