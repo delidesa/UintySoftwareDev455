@@ -23,7 +23,7 @@ public class Attack: MonoBehaviour {
 		set { attackdamage = value; }
 	}
 	//this will allow the user to assing the scripts to enemies and heroes
-	public float Attackdamage
+	public float Attack_Bonus
 	{ 
 		get { return this.attack_Bonus; }
 		set { attack_Bonus = value; }
