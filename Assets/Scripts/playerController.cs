@@ -18,6 +18,16 @@ public class playerController : MonoBehaviour {
 	Rigidbody2D playerRB;
 	Animator myAnim;
 
+	//For the projectile
+	public Transform gunTip;
+	public GameObject bullet;
+	float fireRate = 1.0f;
+	float nextFire = 0f;
+
+	//Audio
+	public AudioSource audio;
+	public AudioClip cardAttackSound;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -34,6 +44,12 @@ public class playerController : MonoBehaviour {
 			grounded = false;
 			myAnim.SetBool("isGrounded", grounded);
 			playerRB.AddForce(new Vector2(0,jumpHeight));
+		}
+
+		//player attacking when pressing the attack button
+		if (Input.GetAxisRaw ("Fire1") > 0) 
+		{//Fire1 is Mouse1
+			cardAttack();
 		}
 			
 	}
@@ -64,5 +80,22 @@ public class playerController : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1; //Will flip sprite
 		transform.localScale = theScale; //Apply the flip to the transform body
+	}
+
+	void cardAttack()
+	{
+		if (Time.time > nextFire) 
+		{
+			nextFire = Time.time + fireRate;
+			if (facingRight) { //If player is facing right, create the original sprite
+				audio.PlayOneShot(cardAttackSound);
+				Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
+			} 
+			else if (!facingRight) //If player is facing left, create sprite but flip 
+			{
+				audio.PlayOneShot(cardAttackSound);
+				Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 180f)));
+			}
+		}
 	}
 }
