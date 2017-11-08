@@ -20,7 +20,7 @@ public class playerController : MonoBehaviour {
 
 	//For the projectile
 	public Transform gunTip;
-	public GameObject bullet;
+	public GameObject projectileObject;
 	float fireRate = 1.0f;
 	float nextFire = 0f;
 
@@ -89,12 +89,12 @@ public class playerController : MonoBehaviour {
 			nextFire = Time.time + fireRate;
 			if (facingRight) { //If player is facing right, create the original sprite
 				audio.PlayOneShot(cardAttackSound);
-				Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
+				Instantiate (projectileObject, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
 			} 
 			else if (!facingRight) //If player is facing left, create sprite but flip 
 			{
 				audio.PlayOneShot(cardAttackSound);
-				Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 180f)));
+				Instantiate (projectileObject, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 180f)));
 			}
 		}
 	}

@@ -804,7 +804,8 @@ MonoBehaviour:
   groundCheck: {fileID: 936916970}
   jumpHeight: 240
   gunTip: {fileID: 1482675055}
-  bullet: {fileID: 1962007693010738, guid: f3c9110d4e7838a45b4783e9969b0997, type: 2}
+  projectileObject: {fileID: 1962007693010738, guid: f3c9110d4e7838a45b4783e9969b0997,
+    type: 2}
   audio: {fileID: 709560893}
   cardAttackSound: {fileID: 8300000, guid: 077db2cb753fab5448246895a6c9c4a3, type: 3}
 --- !u!82 &709560893
