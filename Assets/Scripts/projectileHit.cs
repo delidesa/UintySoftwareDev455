@@ -21,6 +21,11 @@ public class projectileHit : MonoBehaviour {
 			myPC.removeForce();//Called the RB and remove its force.
 			Instantiate(explosionEffect, transform.position, transform.rotation);//transtion this script is attached to. Start there.
 			Destroy(gameObject);
+			if(other.tag == "Enemy")
+			{
+				enemyHealth hurtEnemy = other.gameObject.GetComponent<enemyHealth>();//Reference to the enemies health
+				hurtEnemy.AddDamage(weaponDamage);
+			}
 		}
 	}
 
@@ -32,6 +37,11 @@ public class projectileHit : MonoBehaviour {
 			myPC.removeForce();//Called the RB and remove its force.
 			Instantiate(explosionEffect, transform.position, transform.rotation);//transtion this script is attached to. Start there.
 			Destroy(gameObject);
+			if(other.tag == "Enemy")
+			{
+				enemyHealth hurtEnemy = other.gameObject.GetComponent<enemyHealth>();//Reference to the enemies health
+				hurtEnemy.AddDamage(weaponDamage);
+			}
 		}
 	}
 	// Update is called once per frame

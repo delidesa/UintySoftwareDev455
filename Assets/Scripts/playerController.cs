@@ -25,8 +25,8 @@ public class playerController : MonoBehaviour {
 	float nextFire = 0f;
 
 	//Audio
-	public AudioSource audio;
-	public AudioClip cardAttackSound;
+	//public AudioSource audio;
+	//public AudioClip cardAttackSound;
 
 	// Use this for initialization
 	void Start () 
@@ -60,7 +60,7 @@ public class playerController : MonoBehaviour {
 		//check if player is grounded.Takes care of falling. 
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 		myAnim.SetBool("isGrounded", grounded);
-		myAnim.SetFloat("VerticleSpeed", playerRB.velocity.y);
+		myAnim.SetFloat("verticleSpeed", playerRB.velocity.y);
 
 		float move = Input.GetAxis("Horizontal");//Axis = predefined value in Unity
 		myAnim.SetFloat("speed",Mathf.Abs(move));//pass in absolute value of move.
@@ -88,12 +88,12 @@ public class playerController : MonoBehaviour {
 		{
 			nextFire = Time.time + fireRate;
 			if (facingRight) { //If player is facing right, create the original sprite
-				audio.PlayOneShot(cardAttackSound);
+				//audio.PlayOneShot(cardAttackSound);
 				Instantiate (projectileObject, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
 			} 
 			else if (!facingRight) //If player is facing left, create sprite but flip 
 			{
-				audio.PlayOneShot(cardAttackSound);
+				//audio.PlayOneShot(cardAttackSound);
 				Instantiate (projectileObject, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 180f)));
 			}
 		}
