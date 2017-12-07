@@ -9,8 +9,20 @@ EditorBuildSettings:
     path: Assets/MainMenu.unity
     guid: 63918c69ba37e4d4783999e6ff34edae
   - enabled: 1
+    path: Assets/MainMenu-Options.unity
+    guid: 28884b60855a76b4899d4556fce7a2a4
+  - enabled: 1
     path: Assets/Dungeon1-1.unity
     guid: 5631f11d816d91d4880c0fb347089818
+  - enabled: 1
+    path: Assets/Dungeon1-2.unity
+    guid: 81e44f735b95ba24ab37d8a71c93de2b
+  - enabled: 1
+    path: Assets/Dungeon1-3.unity
+    guid: 21d3f8b8d647cb5479a90c5d0b0cfa89
+  - enabled: 1
+    path: Assets/Dungeon1-4.unity
+    guid: d32c3d90a1858504fac27aeb139e59e8
   - enabled: 1
     path: Assets/Credits.unity
     guid: 5e067353a2c57d54f83a1156fa18c2c1
